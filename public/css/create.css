@@ -1,0 +1,38 @@
+body {
+    background-color: lightblue; /* تنظیم رنگ پس زمینه به آبی روشن */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* تنظیم ارتفاع برای وسط قرار گرفتن محتوا */
+}
+table {
+    border-collapse: collapse;
+    background-color: royalblue; /* تنظیم رنگ پس زمینه تیبل به آبی پررنگ */
+    color: white; /* تنظیم رنگ متن به سفید */
+    padding: 22px;
+    border-radius: 10px;
+}
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    box-sizing: border-box;
+}
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    box-sizing: border-box;
+}
+button[type="submit"] {
+    background-color: royalblue; /* تنظیم رنگ پس زمینه دکمه به آبی پررنگ */
+    color: white; /* تنظیم رنگ متن دکمه به سفید */
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}

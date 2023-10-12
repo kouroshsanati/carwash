@@ -1,8 +1,7 @@
-
-@if (session('success'))
+{{--@if (session('success'))
     {{ session('success') }}
     @php
-        $service = \App\Models\Service::query()->where('code', session('success'));
+        $service = \App\Models\Service::query()->where('code', session('success'))->first();
         $id = $service->service;
     @endphp
 
@@ -26,32 +25,25 @@
 @endif
 
 <a href="{{ route('services.create') }}" class="btn btn-primary">Create Service</a>
-<a href="{{ route('rename') }}" class="btn btn-info">Edit Service</a>
+<a href="{{ route('rename') }}" class="btn btn-info">Edit Service</a>--}}
 
-{{--
-<style>
-    /* Set the background color to blue */
-    body {
-        background-color: #007BFF;
-    }
 
-    /* Style the table */
-    .table-striped tbody tr:nth-of-type(odd) {
-        background-color: #E0E0E0; /* Alternate row background color */
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>welcome page</title>
+    <link href="{{ asset('../css/welcome.css') }}" rel="stylesheet">
 
-    /* Style the table headers */
-    .table-striped thead th {
-        background-color: #343A40; /* Header background color */
-        color: white; /* Header text color */
-    }
-</style>
-
-@if (session('success'))
+</head>
+<body>
+@if ( session('success'))
     {{ session('success') }}
     @php
-        $service = \App\Models\Service::query()->where('code', session('success'));
+        $service = \App\Models\Service::query()->where('code', session('success'))->first();
         $id = $service->service;
+
     @endphp
 
     <table class="table table-striped">
@@ -72,13 +64,8 @@
     </table>
 @endif
 
-<div class="text-center">
-    <div class="button-container">
-        <a href="{{ route('services.create') }}" class="btn btn-primary">Create Service</a>
-    </div>
-    <div class="button-container">
-        <a href="{{ route('rename') }}" class="btn btn-info">Edit Service</a>
-    </div>
-</div>
---}}
+<a href="{{ route('services.create') }}" class="btn btn-primary">Create Service</a>
+<a href="{{ route('rename') }}" class="btn btn-info">Edit Service</a>
+</body>
+</html>
 

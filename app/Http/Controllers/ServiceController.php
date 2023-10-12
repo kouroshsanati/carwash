@@ -15,6 +15,7 @@ class ServiceController extends Controller
         1 => ['name' => 'nezafatDakhel', 'price' => '30000', 'time' => 30],
         2 => ['name' => 'sefrShooee', 'price' => '80000', 'time' => 60],
     ];
+
     public function create()
     {
         return view('services.create', ['services' => $this->services]);
@@ -55,12 +56,12 @@ class ServiceController extends Controller
     {
         $validated = $request->validated();
         $service->update($validated);
-        return redirect()->route('home')->with('success', $service->code);
+        return redirect()->route('home')->with('success', $service->code)->with('services', $this->services);
     }
 
     public function destroy(Service $service)
     {
         $service->delete();
-        return redirect()->route('home')->with('success', "your service by code $service->code has been deleted");
+        return redirect()->route('home')->with('success', $service->code)->with('services', $this->services);
     }
 }
